@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Servidor Teste</title>
+</head>
+<body>
+  
+  <img src="Servidorgitteste1/imagens/ipg1.jpg" width=200 height=200> 
+  <h1>Bem-vindo ao meu servidor</h1>
+  <p>Este é um exemplo de página HTML para o servidor</p>
+</body>
+</html>
