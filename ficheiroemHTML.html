@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,9 +27,58 @@
 <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ipg1.png?raw=true" height="100" width="200">
   <h1>Bem-vindo ao meu servidor</h1>
   <h4>Este é um exemplo de um servidor</h4>
-
+  <h4>Enviar coisas para aqui</h4>
   <footer style="color: gold;"><b>Teste do servidor realizado por Tiago Martins Nº1706775 Pág:1</b></footer>
   
 </body>
 
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Servidor Teste</title>
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 50px;
+    }
+
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 30px;
+      background-color: #000000;
+      text-align: right;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bem-vindo ao meu servidor</h1>
+  <h4>Este é um exemplo de um servidor</h4>
+
+  <ul id="lista-arquivos"></ul>
+
+  <footer style="color: gold;"><b>Teste do servidor realizado por Tiago Martins Nº1706775 Pág:1</b></footer>
+
+  <script>
+    const listaArquivos = document.getElementById('lista-arquivos');
+
+    // Fazer uma requisição para obter a lista de arquivos do servidor
+    fetch('/obter-arquivos')
+      .then(response => response.json())
+      .then(data => {
+        // Para cada arquivo recebido, criar um elemento <li> e adicioná-lo à lista
+        data.forEach(arquivo => {
+          const itemLista = document.createElement('li');
+          itemLista.textContent = arquivo.nome;
+          listaArquivos.appendChild(itemLista);
+        });
+      });
+  </script>
+</body>
 </html>
