@@ -24,7 +24,7 @@ const path = require('path');
 const server = http.createServer((req, res) => {
   if (req.method === 'POST' && req.url === '/upload') {
     // Lidar com a recepção de um arquivo enviado pelo GitHub
-    const fileStream = fs.createWriteStream('./ficheiros/' + Date.now() + '.html');
+    const fileStream = fs.createWriteStream('https://github.com/TiagoRochaMartins/server2test/blob/main/fich2/' + Date.now() + '.html');
     req.pipe(fileStream);
     req.on('end', () => {
       res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -32,7 +32,7 @@ const server = http.createServer((req, res) => {
     });
   } else if (req.method === 'GET' && req.url === '/obter-arquivos') {
     // Obter a lista de arquivos no diretório de arquivos
-    fs.readdir('caminho/para/diretorio/arquivos', (err, files) => {
+    fs.readdir('https://github.com/TiagoRochaMartins/server2test/blob/main/fich2/', (err, files) => {
       if (err) {
         res.writeHead(500, {'Content-Type': 'text/plain'});
         res.end('Erro interno do servidor');
