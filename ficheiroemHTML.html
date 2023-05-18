@@ -34,7 +34,7 @@
 
 </html>
 -->
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -45,22 +45,22 @@
   <h1>Bem-vindo ao meu servidor</h1>
   <h4>Este é um exemplo de um servidor</h4>
   <h4>Enviar coisas para aqui</h4>
-  <iframe id="content" src="https://github.com/TiagoRochaMartins/server2test/blob/main/testebloco.txt"></iframe>
+  <div id="content"></div>
 
-  
-</body>
-</html>-->
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Exemplo de exibição de arquivo do GitHub</title>
-</head>
-<body>
-  <div id="conteudo-arquivo"></div>
-  
-  <script src="ficheiro2.js"></script> <!-- Inclua o script JavaScript em um arquivo separado ou insira diretamente no HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // Faz uma solicitação para obter o conteúdo do arquivo de texto no GitHub
+    axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt')
+      .then(response => {
+        // Insere o conteúdo na página
+        document.getElementById('content').textContent = response.data;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
 </body>
 </html>
+
+
 
