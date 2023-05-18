@@ -24,7 +24,7 @@
 </head>
 <body>
   
-<img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ipg1.png?raw=true" height="100" width="200">
+
   <h1>Bem-vindo ao meu servidor</h1>
   <h4>Este é um exemplo de um servidor</h4>
   <h4>Enviar coisas para aqui</h4>
@@ -58,27 +58,37 @@
   </style>
 </head>
 <body>
+  <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ipg1.png?raw=true" height="100" width="200">
   <h1>Bem-vindo ao meu servidor</h1>
   <h4>Este é um exemplo de um servidor</h4>
+  <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ficheiros/ipg2.jpeg?raw=true" height="100" width="200">
 
   <ul id="lista-arquivos"></ul>
 
   <footer style="color: gold;"><b>Teste do servidor realizado por Tiago Martins Nº1706775 Pág:1</b></footer>
 
   <script>
-    const listaArquivos = document.getElementById('lista-arquivos');
-
-    // Fazer uma requisição para obter a lista de arquivos do servidor
-    fetch('/obter-arquivos')
-      .then(response => response.json())
-      .then(data => {
-        // Para cada arquivo recebido, criar um elemento <li> e adicioná-lo à lista
-        data.forEach(arquivo => {
-          const itemLista = document.createElement('li');
-          itemLista.textContent = arquivo.nome;
-          listaArquivos.appendChild(itemLista);
-        });
-      });
+    // Função para fazer a requisição AJAX
+    function getArquivo() {
+      const xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            const nomeArquivo = xhr.responseText;
+            const imgElement = document.getElementById('imagem');
+            imgElement.src = nomeArquivo;
+          } else {
+            console.error('Erro ao obter o nome do arquivo:', xhr.status);
+          }
+        }
+      };
+      xhr.open('GET', '/ficheiros', true);
+      xhr.send();
+    }
+  
+    // Chama a função para obter o nome do arquivo ao carregar a página
+    window.onload = getArquivo;
   </script>
+  
 </body>
 </html>
