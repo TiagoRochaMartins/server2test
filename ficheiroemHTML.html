@@ -41,7 +41,7 @@
   <title>Servidor WEB</title>
 </head>
 <body>
-  
+  <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ipg1.png?raw=true"/>
   <h1>Bem-vindo ao meu servidor</h1>
   <h4>Este é um exemplo de um servidor</h4>
   <h4>Enviar coisas para aqui</h4>
@@ -49,8 +49,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
-    // Faz uma solicitação para obter o conteúdo do arquivo de texto no GitHub
+    // Vai obter o conteudo de um bloco de notas que está no repositório do GitHub
     axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt')
+    
       .then(response => {
         // Insere o conteúdo na página
         document.getElementById('content').textContent = response.data;
@@ -61,6 +62,7 @@
   </script>
 </body>
 </html>
+
 
 
 
