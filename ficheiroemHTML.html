@@ -84,6 +84,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Servidor WEB</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
   <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ipg1.png?raw=true"/>
@@ -91,7 +92,7 @@
   <div id="content1"></div>
   <div id="content2"></div>
   
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
   <script>
     axios.all([
       axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt'),
@@ -107,8 +108,11 @@
       .catch(error => {
         console.error(error);
       });
+      
   </script>
+
 </body>
+
 </html>
 
 

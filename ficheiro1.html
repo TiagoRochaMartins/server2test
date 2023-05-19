@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Servidor WEB</title>
+</head>
+<body>
+  <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ipg1.png?raw=true"/>
+  <h1>Bem-vindo ao meu servidor</h1>
+  <div id="content1"></div>
+  <div id="content2"></div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    
+      axios.all([
+      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt'),
+      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/ficheiroteste2.html')
+  
+])
+  .then(axios.spread((response1, response2) => {
+    // Insere o conteúdo do primeiro arquivo no elemento com id "content1"
+    document.getElementById('content1').textContent = response1.data;
+
+    // Insere o conteúdo do segundo arquivo no elemento com id "content2"
+    document.getElementById('content2').innerHTML = response2.data;
+
+    
+    
+  }))
+  .catch(error => {
+    console.error(error);
+  });
+
+      
+  </script>
+
+  
+</body>
+</html>
