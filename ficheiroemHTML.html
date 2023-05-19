@@ -45,21 +45,36 @@
   <h1>Bem-vindo ao meu servidor</h1>
   <h4>Este é um exemplo de um servidor</h4>
   <h4>Enviar coisas para aqui</h4>
-  <div id="content"></div>
-
+</br>
+</br>
+  <div id="content1"></div>
+  <div id="content2"></div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
-    // Vai obter o conteudo de um bloco de notas que está no repositório do GitHub
-    axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt')
     
-      .then(response => {
-        // Insere o conteúdo na página
-        document.getElementById('content').textContent = response.data;
-      })
-      .catch(error => {
-        console.error(error);
-      });
+      axios.all([
+      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt'),
+      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/ficheiroteste2.html')
+  
+])
+  .then(axios.spread((response1, response2) => {
+    // Insere o conteúdo do primeiro arquivo no elemento com id "content1"
+    document.getElementById('content1').textContent = response1.data;
+
+    // Insere o conteúdo do segundo arquivo no elemento com id "content2"
+    document.getElementById('content2').innerHTML = response2.data;
+
+    
+    
+  }))
+  .catch(error => {
+    console.error(error);
+  });
+
+      
   </script>
+
+  
 </body>
 </html>
 

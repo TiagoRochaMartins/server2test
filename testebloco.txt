@@ -1,4 +1,10 @@
+Este Teste vem de um bloco de notas chamado testeblco.txt.
 Teste para ver se funciona.
-O Ministério Público (MP) confirmou, esta quinta-feira, que está a investigar os acontecimentos no Ministério das Infraestruturas que envolveram o gabinete do ministro João Galamba e o ex-adjunto Frederico Pinheiro.
-
-"Confirma-se, como já é do domínio público, a existência de inquérito tendo por objeto os factos ocorridos no Ministério das Infraestruturas e aqueles que com os mesmos se encontrem relacionados. Este inquérito é dirigido pelo DIAP [Departamento de Investigação e Ação Penal] Regional de Lisboa e encontra-se em segredo de justiça", referiu a Procuradoria-Geral da República (PGR), em resposta à Lusa.
+O Ministério Público (MP) confirmou, esta quinta-feira, que está 
+a investigar os acontecimentos no Ministério das Infraestruturas que envolveram 
+o gabinete do ministro João Galamba e o ex-adjunto Frederico Pinheiro.
+"Confirma-se, como já é do domínio público, a existência de inquérito tendo por 
+objeto os factos ocorridos no Ministério das Infraestruturas e aqueles que com 
+os mesmos se encontrem relacionados. Este inquérito é dirigido 
+pelo DIAP [Departamento de Investigação e Ação Penal] Regional de Lisboa e 
+encontra-se em segredo de justiça", referiu a Procuradoria-Geral da República (PGR), em resposta à Lusa.
