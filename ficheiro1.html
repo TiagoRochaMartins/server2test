@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>Servidor WEB</title>
 </head>
 
 <body>
-
   <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ipg1.png?raw=true" />
   <h1>Bem-vindo ao meu servidor</h1>
   <div id="content1"></div>
   <div id="content2"></div>
   <div id="content4"></div>
-  
   <h4>Tabelas inserida através do excel que está no repositório do Github</h4>
   <table id="excelTable"></table>
-
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
   <script src="https://unpkg.com/mammoth/dist/mammoth.browser.js"></script>
@@ -26,12 +22,13 @@
       axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/ficheiroteste2.html')
 
     ])
-      .then(axios.spread((response1, response2) => {
+      .then(axios.spread((response1, response2, response4) => {
         // Insere o conteúdo do primeiro arquivo no elemento com id "content1"
         document.getElementById('content1').textContent = response1.data;
         // Insere o conteúdo do segundo arquivo no elemento com id "content2"
         document.getElementById('content2').innerHTML = response2.data;
 
+       //document.getElementById('content4').innerHTML = response4.data;
         
 
         var excelUrl = 'https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/Livro1.xlsx';
@@ -47,16 +44,15 @@
             // Inserir tabela gerada no elemento com id "excelTable"
             document.getElementById('excelTable').innerHTML = html;
           })
-
-
-
-
-
       }))
       .catch(error => {
         console.error(error);
       });
+
+
+      
   </script>
+
 
 
 
