@@ -23,7 +23,7 @@ const fs = require('fs');
 
 const server = http.createServer((req, res) => {
   // Lê o arquivo index.html e envia para o cliente
-  fs.readFile('ficheiro1.html', (err, data) => { 
+  fs.readFile('qrcode.html', (err, data) => { 
     if (err) {
       res.writeHead(500, {'Content-Type': 'text/plain'});
       res.end('Erro interno do servidor');
@@ -37,8 +37,3 @@ const server = http.createServer((req, res) => {
 server.listen(8000, () => {
   console.log('Servidor a funcionar na porta 8000');
 });
-
-
-
-
-

@@ -79,46 +79,43 @@
 </html>-->
 
 
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Servidor WEB</title>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Servidor WEB pag2</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/dist/qrcode.min.js"></script>
 </head>
 <body>
-  <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ipg1.png?raw=true"/>
-  <h1>Bem-vindo ao meu servidor</h1>
-  <div id="content1"></div>
-  <div id="content2"></div>
-  
-  
+  <div id="qrcode"></div>
+  <h1>Página 2</h1>
+
   <script>
-    axios.all([
-      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt'),
-      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/ficheiroteste2.html')
-    ])
-      .then(axios.spread((response1, response2) => {
-        // Insere o conteúdo do primeiro arquivo no elemento com id "content1"
-        document.getElementById('content1').innerHTML = response1.data;
+    // URL do arquivo de bloco de notas
+    var fileUrl = "https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt";
 
-        // Insere o conteúdo do segundo arquivo no elemento com id "content2"
-        document.getElementById('content2').innerHTML = response2.data;
-      }))
-      .catch(error => {
-        console.error(error);
+    // Função para ler o conteúdo do arquivo
+    function fetchFileContent(url) {
+      return fetch(url)
+        .then(response => response.text())
+        .catch(error => console.log(error));
+    }
+
+    // Função para gerar o QR Code com o conteúdo do arquivo
+    function generateQRCode(content) {
+      var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: content,
+        width: 200,
+        height: 200
       });
-      
+      qrcode.make();
+    }
+
+    // Carrega o conteúdo do arquivo e gera o QR Code
+    fetchFileContent(fileUrl)
+      .then(content => generateQRCode(content));
   </script>
-
 </body>
-
-</html>-->
-
-
-
-
-
-
+</html>
 
 

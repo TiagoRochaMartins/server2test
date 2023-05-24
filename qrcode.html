@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Servidor WEB pag2</title>
+  <script src="https://github.com/davidshimjs/qrcodejs/blob/master/qrcode.min.js"></script>
+</head>
+<body>
+  <div id="qrcode"></div>
+  <h1>Teste QRCODE</h1>
+
+  <script>
+    // URL do arquivo de bloco de notas
+    var fileUrl = "https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt";
+
+    // Função para ler o conteúdo do arquivo
+    function fetchFileContent(url) {
+      return fetch(url)
+        .then(response => response.text())
+        .catch(error => console.log(error));
+    }
+
+    // Função para gerar o QR Code com o conteúdo do arquivo
+    function generateQRCode(content) {
+      var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: content,
+        width: 200,
+        height: 200
+      });
+      qrcode.make();
+    }
+
+    // Carrega o conteúdo do arquivo e gera o QR Code
+    fetchFileContent(fileUrl)
+      .then(content => generateQRCode(content));
+  </script>
+</body>
+</html>
