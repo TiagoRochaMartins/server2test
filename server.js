@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const server = http.createServer((req, res) => {
   // Lê o arquivo index.html e envia para o cliente
-  fs.readFile('ficheiroemHTML.html', (err, data) => { 
+  fs.readFile('ficheiro1.html', (err, data) => { 
     if (err) {
       res.writeHead(500, {'Content-Type': 'text/plain'});
       res.end('Erro interno do servidor');
