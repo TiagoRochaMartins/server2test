@@ -51,7 +51,7 @@ const server = http.createServer((req, res) => {
       } else {
         res.writeHead(200, {'Content-Type': 'text/html'});
         // Adiciona o link para a página 2 no GitHub
-        const content = data.toString().replace('<a href="ficheiro2.html">Abrir Página 2</a>', '<a href="ficheiro2.html">Abrir Página 2</a>');
+        const content = data.toString().replace('<a href="ficheiro2.html">Abrir Página 2</a>', '<a href="https://github.com/TiagoRochaMartins/server2test/blob/main/ficheiro2.html">Abrir Página 2</a>');
         res.end(content);
       }
     });
