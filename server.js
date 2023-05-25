@@ -40,30 +40,32 @@ server.listen(8000, () => {
 
 const http = require('http');
 const fs = require('fs');
+const path = require('path');
 
 const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    // Lê o arquivo index.html e envia para o cliente
-    fs.readFile('ficheiro1.html', (err, data) => { 
-      if (err) {
-        res.writeHead(500, {'Content-Type': 'text/plain'});
-        res.end('Erro interno do servidor');
-      } else {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        // Adiciona o link para a página 2 no GitHub
-        const content = data.toString().replace('<a href="ficheiro2.html">Abrir Página 2</a>', '<a href="https://github.com/TiagoRochaMartins/server2test/blob/main/ficheiro2.html">Abrir Página 2</a>');
-        res.end(content);
-      }
-    });
-  } else {
-    // URL inválido - Retorna um erro 404
-    res.writeHead(404, {'Content-Type': 'text/plain'});
-    res.end('Página não encontrada');
+  let filePath = '.' + req.url;
+  if (filePath === './') {
+    filePath = './ficheiro1.html';
   }
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('Página não encontrada');
+    } else {
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      if (filePath === './ficheiro1.html') {
+        data = data.toString().replace('<a href="ficheiro2.html">Abrir Página 2</a>', '<a href="/ficheiro2.html">Abrir Página 2</a>');
+      }
+      res.end(data);
+    }
+  });
 });
 
 server.listen(8000, () => {
   console.log('Servidor a funcionar na porta 8000');
 });
+
+
 
 
