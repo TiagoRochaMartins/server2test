@@ -85,7 +85,8 @@ const server = http.createServer((req, res) => {
       if (filePath === './ficheiro1.html') {
         data = data.toString()
           .replace('<a href="ficheiro2.html">Abrir Página 2</a>', '<a href="/ficheiro2.html">Abrir Página 2</a>')
-          .replace('<a href="ficheiro3.html">Abrir Página 3</a>', '<a href="/ficheiro3.html">Abrir Página 3</a>');
+          .replace('<a href="ficheiro3.html">Abrir Página 3</a>', '<a href="/ficheiro3.html">Abrir Página 3</a>')
+          .replace('<a href="qrcode.html">Abrir Página 3</a>', '<a href="/qrcode.html">Abrir Página 3</a>');
       }
       res.end(data);
     }
