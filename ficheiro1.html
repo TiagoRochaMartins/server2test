@@ -6,13 +6,15 @@
 </head>
 
 <body>
-  <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/ipg1.png?raw=true" />
+  <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/imagens/ipg1.png?raw=true" height="200"
+  width="300"/>
   <h1>Bem-vindo ao meu servidor</h1>
   <div id="content1"></div>
   <div id="content2"></div>
   <div id="content4"></div>
   <h4>Tabelas inserida através do excel que está no repositório do Github</h4>
   <table id="excelTable"></table>
+  <br></br>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
   <script src="https://unpkg.com/mammoth/dist/mammoth.browser.js"></script>
@@ -49,15 +51,27 @@
         console.error(error);
       });
 
-      function abrirPagina2() {
+     /* function abrirPagina2() {  Aqui abre num novo separador
         window.open('ficheiro2.html', '_blank');
+      }*/
+      function abrirPagina2() {  // Aqui abre no mesmo separador
+        window.location.href =  "/ficheiro2.html";
+      }
+
+      /*function abrirPagina3() {  Aqui abre num novo separador
+        window.open('ficheiro3.html', '_blank');
+      }*/
+      function abrirPagina3() {  // Aqui abre no mesmo separador
+        window.location.href =  "/ficheiro3.html";
       }
 
       
   </script>
 
-<a href="#" onclick="abrirPagina2()">Abrir Página 2</a>
-  
+<!--<a href="#" onclick="abrirPagina2()">Abrir Página 2</a>
+<br></br>
+<a href="#" onclick="abrirPagina3()">Abrir Página 3</a>-->
+
   <style>
     /* Para o estilo do rodapé*/
     body {
@@ -79,9 +93,18 @@
 
 
 
+<footer style="color: gold; display: flex; justify-content: space-between;">
+  <div>
+      <a href="#" onclick="abrirPagina2()" style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 2</a> &ensp; <!--Isto (&ensp;) dá dois espaços entre Abrir Página 2 e Abrir Página 3-->
+      <a href="#" onclick="abrirPagina3()" style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 3</a>
+  </div>
+  <div>
+      <b>Teste do servidor realizado por Tiago Martins Nº1706775 Pág:2</b>
+  </div>
+</footer>
 
 
-  <footer style="color: gold;"><b>Teste do servidor realizado por Tiago Martins Nº1706775 Pág:1</b></footer>
+  
 
   
 </body>
