@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Servidor WEB</title>
@@ -7,7 +8,7 @@
 
 <body>
   <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/imagens/ipg1.png?raw=true" height="200"
-  width="300"/>
+    width="300" />
   <h1>Bem-vindo ao meu servidor</h1>
   <div id="content1"></div>
   <div id="content2"></div>
@@ -24,14 +25,14 @@
       axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/ficheiroteste2.html')
 
     ])
-      .then(axios.spread((response1, response2, response4) => {
+      .then(axios.spread((response1, response2) => {
         // Insere o conteúdo do primeiro arquivo no elemento com id "content1"
         document.getElementById('content1').textContent = response1.data;
         // Insere o conteúdo do segundo arquivo no elemento com id "content2"
         document.getElementById('content2').innerHTML = response2.data;
 
-       //document.getElementById('content4').innerHTML = response4.data;
-        
+       
+
 
         var excelUrl = 'https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/Livro1.xlsx';
         fetch(excelUrl)
@@ -46,34 +47,34 @@
             // Inserir tabela gerada no elemento com id "excelTable"
             document.getElementById('excelTable').innerHTML = html;
           })
-          
+
       }))
       .catch(error => {
         console.error(error);
       });
 
-     /* function abrirPagina2() {  Aqui abre num novo separador
-        window.open('ficheiro2.html', '_blank');
-      }*/
-      function abrirPagina2() {  // Aqui abre no mesmo separador
-        window.location.href =  "/ficheiro2.html";
-      }
+    /* function abrirPagina2() {  Aqui abre num novo separador
+       window.open('ficheiro2.html', '_blank');
+     }*/
+    function abrirPagina2() {  // Aqui abre no mesmo separador
+      window.location.href = "/ficheiro2.html";
+    }
 
-      /*function abrirPagina3() {  Aqui abre num novo separador
-        window.open('ficheiro3.html', '_blank');
-      }*/
-      function abrirPagina3() {  // Aqui abre no mesmo separador
-        window.location.href =  "/ficheiro3.html";
-      }
+    /*function abrirPagina3() {  Aqui abre num novo separador
+      window.open('ficheiro3.html', '_blank');
+    }*/
+    function abrirPagina3() {  // Aqui abre no mesmo separador
+      window.location.href = "/ficheiro3.html";
+    }
 
-      function abrirQRCode() {  // Aqui abre no mesmo separador
-        window.location.href =  "/ficheiro4.html";
-      }
+    function abrirQRCode() {  // Aqui abre no mesmo separador
+      window.location.href = "/ficheiro4.html";
+    }
 
-      
+
   </script>
 
-<!--<a href="#" onclick="abrirPagina2()">Abrir Página 2</a>
+  <!--<a href="#" onclick="abrirPagina2()">Abrir Página 2</a>
 <br></br>
 <a href="#" onclick="abrirPagina3()">Abrir Página 3</a>-->
 
@@ -96,24 +97,28 @@
     }
   </style>
 
+  <footer style="color: gold; display: flex; justify-content: space-between;">
+    <div>
+      <a href="#" onclick="abrirPagina2()"
+        style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 2</a> &ensp;
+      <!--Isto (&ensp;) dá dois espaços entre Abrir Página 2 e Abrir Página 3-->
+      <a href="#" onclick="abrirPagina3()"
+        style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 3</a> &ensp;
+      <!--Isto (&ensp;) dá dois espaços entre Abrir Página 2 e Abrir Página 3-->
+      <a href="#" onclick="abrirQRCode()"
+        style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 4</a> &ensp;
+      <!--Isto (&ensp;) dá dois espaços entre Abrir Página 2 e Abrir Página QRCode-->
 
-
-<footer style="color: gold; display: flex; justify-content: space-between;">
-  <div>
-      <a href="#" onclick="abrirPagina2()" style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 2</a> &ensp; <!--Isto (&ensp;) dá dois espaços entre Abrir Página 2 e Abrir Página 3-->
-      <a href="#" onclick="abrirPagina3()" style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 3</a> &ensp; <!--Isto (&ensp;) dá dois espaços entre Abrir Página 2 e Abrir Página 3-->
-      <a href="#" onclick="abrirQRCode()" style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 4</a> &ensp; <!--Isto (&ensp;) dá dois espaços entre Abrir Página 2 e Abrir Página QRCode-->
-      
     </div>
-  <div>
+    <div>
       <b>Teste do servidor realizado por Tiago Martins Nº1706775 Pág:1</b>
-  </div>
-</footer>
+    </div>
+  </footer>
 
 
-  
 
-  
+
+
 </body>
 
 </html>
