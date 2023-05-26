@@ -13,6 +13,12 @@
   <h4> <a href ="https://politecnicoguarda.pt/">Página Principal do IPG</a></h4>
   <h4> <a href ="https://moodle.ipg.pt/">Moodle do IPG</a></h4>
   <h4> <a href ="https://cloud.sysnovare.pt/ipg/si_main">Sigarra do IPG</a></h4>
+
+  <script>
+    function abrirPagina3() {  // Aqui abre no mesmo separador
+        window.location.href =  "/ficheiro3.html";
+      }
+  </script>
   <style>
     body {
       margin: 0;
@@ -32,8 +38,9 @@
   </style>
   <footer style="color: gold; display: flex; justify-content: space-between;">
     <div>
-      <a href="/" style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Voltar para a Página
-        1</a>
+      <a href="/" style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Voltar para a Página1</a>&ensp;
+      <a href="#" onclick="abrirPagina3()" style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 3</a> &ensp; 
+      
     </div>
     <div>
       <b>Teste do servidor realizado por Tiago Martins Nº1706775 Pág:2</b>
