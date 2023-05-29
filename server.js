@@ -87,6 +87,7 @@ const server = http.createServer((req, res) => {
           .replace('<a href="ficheiro2.html">Abrir Página 2</a>', '<a href="/ficheiro2.html">Abrir Página 2</a>')
           .replace('<a href="ficheiro3.html">Abrir Página 3</a>', '<a href="/ficheiro3.html">Abrir Página 3</a>')
           .replace('<a href="ficheiro4.html">Abrir PáginaQRCode</a>', '<a href="/ficheiro4.html">Abrir PáginaQRCode</a>');
+          
       }
       res.end(data);
     }
