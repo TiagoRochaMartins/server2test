@@ -35,6 +35,55 @@
       line-height: 30px;
     }
   </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.4.0/socket.io.js"></script>
+
+<div id="chatbox">
+  <ul id="messages"></ul>
+  <form id="message-form">
+    <input type="text" id="input-message" placeholder="Escreva sua mensagem...">
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<script>
+  // Conecta-se ao servidor WebSocket
+  const socket = io();
+
+  // Seleciona os elementos do HTML
+  const messageForm = document.getElementById('message-form');
+  const messageInput = document.getElementById('input-message');
+  const messagesList = document.getElementById('messages');
+
+  // Manipulador de evento para envio de mensagens
+  messageForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o envio do formulário
+
+    const messageText = messageInput.value; // Obtém o texto da mensagem
+
+    if (messageText.trim() !== '') {
+      const messageItem = document.createElement('li'); // Cria um novo item da lista
+      messageItem.textContent = messageText; // Define o texto da mensagem
+
+      messagesList.appendChild(messageItem); // Adiciona a mensagem à lista
+
+      messageInput.value = ''; // Limpa o campo de entrada de mensagens
+
+      // Envia a mensagem para o servidor via WebSocket
+      socket.emit('message', messageText);
+    }
+  });
+
+  // Manipulador de evento para receber mensagens do servidor
+  socket.on('message', (message) => {
+    const messageItem = document.createElement('li'); // Cria um novo item da lista
+    messageItem.textContent = message; // Define o texto da mensagem
+
+    messagesList.appendChild(messageItem); // Adiciona a mensagem à lista
+  });
+</script>
+
+
+
   <footer style="color: gold; display: flex; justify-content: space-between;">
     <div>
       <a href="/" style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Voltar para ao Início</a>&ensp;
