@@ -7,34 +7,78 @@
 </head>
 
 <body>
-<style>
-  body{
-    background-color: rgb(255, 255, 255);
-  }
-</style>
-<style>
-  .texto-contactos {
-    position:relative;
-    top: 0;
-    right: 950px;
-    left: 950px;
-    
-    margin: 0;
-    color: rgb(0, 0, 0);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 25px;
-  }
-</style>
+  <div class="button-container">
+    <button id="light-mode">Claro</button>
+    <button id="dark-mode">Escuro</button>
+  </div>
+  <script src="script.js"></script>
+  <br>
+  <style>
+    .button-container {
+      display: flex;
+      justify-content: center;
+      
+    }
+
+    body {
+
+      background-color: var(--background-color);
+      color: var(--text-color);
+
+    }
+
+    button {
+
+      background-color: var(--button-bg-color);
+      color: var(--button-text-color);
+      padding: 5px 5px;
+      font-size: 16px;
+      border:none;
+      cursor: pointer;
+      
+
+    }
+
+    /* Modo Claro */
+    body.light {
+      --background-color: #ffffff;
+      --text-color: #000000;
+      --button-bg-color: #f0f0f0;
+      --button-text-color: #000000;
+    }
+
+    /* Modo Escuro */
+    body.dark {
+      --background-color: #000000;
+      --text-color: #ffffff;
+      --button-bg-color: #000000;
+      --button-text-color: #ffffff;
+    }
+  </style>
+
+  <script>
+    const lightModeButton = document.getElementById('light-mode');
+    const darkModeButton = document.getElementById('dark-mode');
+
+    lightModeButton.addEventListener('click', () => {
+      const body = document.body;
+      body.classList.remove('dark');
+      body.classList.add('light');
+    });
+
+    darkModeButton.addEventListener('click', () => {
+      const body = document.body;
+      body.classList.remove('light');
+      body.classList.add('dark');
+    });
+
+
+  </script>
 
   <img src="https://github.com/TiagoRochaMartins/server2test/blob/main/imagens/ipg1.png?raw=true" height="200"
     width="300" />
-    <div class="texto-contactos">
-    <h5>
-  Contactos: <br>
-  Tel:9########<br>
-  E-mail:exemplo@gmail.com<br>
-</h5>
-</div>
+
+  </div>
   <h1>Bem-vindo ao meu servidor</h1>
   <div id="content1"></div>
   <div id="content2"></div>
@@ -58,7 +102,7 @@
         // Insere o conteúdo do segundo arquivo no elemento com id "content2"
         document.getElementById('content2').innerHTML = response2.data;
 
-       
+
 
 
         var excelUrl = 'https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/Livro1.xlsx';
@@ -122,8 +166,6 @@
       text-align: right;
       line-height: 30px;
     }
-
-    
   </style>
 
   <footer style="color: gold; display: flex; justify-content: space-between;">
