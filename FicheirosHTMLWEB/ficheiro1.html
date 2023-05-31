@@ -93,8 +93,7 @@
   <script>
     axios.all([
       axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/OutrosFicheiros/testebloco.txt'),
-      
-      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/OutrosFicheiros/ficheiroteste2.html')
+      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/FicheirosHTMLWEB/ficheiroteste2.html')
 
     ])
       .then(axios.spread((response1, response2) => {
@@ -106,7 +105,7 @@
 
 
 
-        var excelUrl = 'https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/Livro1.xlsx';
+        var excelUrl = 'https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/OutrosFicheiros/Livro1.xlsx';
         fetch(excelUrl)
           .then(function (response3) {
             return response3.arrayBuffer();
@@ -141,6 +140,10 @@
 
     function abrirQRCode() {  // Aqui abre no mesmo separador
       window.location.href = "/FicheirosHTMLWEB/ficheiro4.html";
+    }
+
+    function contactos() {  // Aqui abre no mesmo separador
+      window.location.href = "/FicheirosHTMLWEB/contactos.html";
     }
 
 
@@ -179,8 +182,8 @@
       <!--Isto (&ensp;) dá dois espaços entre Abrir Página 2 e Abrir Página 3-->
       <a href="#" onclick="abrirQRCode()"
         style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Abrir Página 4</a> &ensp;
-      <!--Isto (&ensp;) dá dois espaços entre Abrir Página 2 e Abrir Página QRCode-->
-
+      <a href="#" onclick="contactos()"
+        style="color: gold; font-family: Arial, sans-serif; text-decoration: none;">Contactos</a> &ensp;
     </div>
     <div>
       <b>Teste do servidor realizado por Tiago Martins Nº1706775 Pág:1</b>

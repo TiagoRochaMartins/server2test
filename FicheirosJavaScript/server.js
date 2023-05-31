@@ -117,8 +117,8 @@ const server = http.createServer((req, res) => {
         data = data.toString()
           .replace('<a href="ficheiro2.html">Abrir Página 2</a>', '<a href="/FicheirosHTMLWEB/ficheiro2.html">Abrir Página 2</a>')
           .replace('<a href="ficheiro3.html">Abrir Página 3</a>', '<a href="/FicheirosHTMLWEB/ficheiro3.html">Abrir Página 3</a>')
-          .replace('<a href="ficheiro4.html">Abrir PáginaQRCode</a>', '<a href="/FicheirosHTMLWEB/ficheiro4.html">Abrir PáginaQRCode</a>');
-          
+          .replace('<a href="ficheiro4.html">Abrir PáginaQRCode</a>', '<a href="/FicheirosHTMLWEB/ficheiro4.html">Abrir Página 4</a>')
+          .replace('<a href="contactos.html">Abrir PáginaQRCode</a>', '<a href="/FicheirosHTMLWEB/contactos.html">Contactos</a>');
       }
       res.end(data);
     }
