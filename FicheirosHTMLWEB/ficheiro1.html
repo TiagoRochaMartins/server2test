@@ -92,8 +92,9 @@
   <!--<script src="https://unpkg.com/mammoth/dist/mammoth.browser.js"></script>-->
   <script>
     axios.all([
-      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/testebloco.txt'),
-      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/ficheiroteste2.html')
+      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/OutrosFicheiros/testebloco.txt'),
+      
+      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/OutrosFicheiros/ficheiroteste2.html')
 
     ])
       .then(axios.spread((response1, response2) => {
@@ -128,18 +129,18 @@
        window.open('ficheiro2.html', '_blank');
      }*/
     function abrirPagina2() {  // Aqui abre no mesmo separador
-      window.location.href = "/ficheiro2.html";
+      window.location.href = "/FicheirosHTMLWEB/ficheiro2.html";
     }
 
     /*function abrirPagina3() {  Aqui abre num novo separador
       window.open('ficheiro3.html', '_blank');
     }*/
     function abrirPagina3() {  // Aqui abre no mesmo separador
-      window.location.href = "/ficheiro3.html";
+      window.location.href = "/FicheirosHTMLWEB/ficheiro3.html";
     }
 
     function abrirQRCode() {  // Aqui abre no mesmo separador
-      window.location.href = "/ficheiro4.html";
+      window.location.href = "/FicheirosHTMLWEB/ficheiro4.html";
     }
 
 
