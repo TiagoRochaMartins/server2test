@@ -95,7 +95,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(8000, () => {
-  console.log('Servidor a funcionar na porta 8000');
+  console.log('Servidor em execução na porta 8000');
 });
 
 
