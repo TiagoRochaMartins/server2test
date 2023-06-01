@@ -115,7 +115,7 @@
             var workbook = XLSX.read(data, { type: 'array' });
             var worksheet = workbook.Sheets[workbook.SheetNames[0]];
             var html = XLSX.utils.sheet_to_html(worksheet);
-            // Inserir tabela gerada no elemento com id "excelTable"
+            
             document.getElementById('excelTable').innerHTML = html;
           })
 
@@ -142,16 +142,14 @@
       window.location.href = "/FicheirosHTMLWEB/ficheiro4.html";
     }
 
-    function contactos() {  // Aqui abre no mesmo separador
+    function Contactos() {  // Aqui abre no mesmo separador
       window.location.href = "/FicheirosHTMLWEB/contactos.html";
     }
 
 
   </script>
 
-  <!--<a href="#" onclick="abrirPagina2()">Abrir Página 2</a>
-<br></br>
-<a href="#" onclick="abrirPagina3()">Abrir Página 3</a>-->
+
 
   <style>
     /* Para o estilo do rodapé*/
