@@ -74,7 +74,7 @@ const path = require('path');
 const server = http.createServer((req, res) => {
   let filePath = '.' + req.url;
   if (filePath === './') {
-    filePath = './FicheirosHTMLWEB/ficheiro1.html';
+    filePath = './ficheiro1.html';
   }
 
   fs.readFile(filePath, (err, data) => {
@@ -85,10 +85,10 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { 'Content-Type': 'text/html' });
       if (filePath === './FicheirosHTMLWEB/ficheiro1.html') {
         data = data.toString()
-          .replace('<a href="ficheiro2.html">Abrir Página 2</a>', '<a href="/FicheirosHTMLWEB/ficheiro2.html">Abrir Página 2</a>')
-          .replace('<a href="ficheiro3.html">Abrir Página 3</a>', '<a href="/FicheirosHTMLWEB/ficheiro3.html">Abrir Página 3</a>')
-          .replace('<a href="ficheiro4.html">Abrir PáginaQRCode</a>', '<a href="/FicheirosHTMLWEB/ficheiro4.html">Abrir Página 4</a>')
-          .replace('<a href="contactos.html">Abrir PáginaContactos</a>', '<a href="/FicheirosHTMLWEB/contactos.html">Contactos</a>');
+          .replace('<a href="ficheiro2.html">Abrir Página 2</a>', '<a href="/ficheiro2.html">Abrir Página 2</a>')
+          .replace('<a href="ficheiro3.html">Abrir Página 3</a>', '<a href="/ficheiro3.html">Abrir Página 3</a>')
+          .replace('<a href="ficheiro4.html">Abrir PáginaQRCode</a>', '<a href="/ficheiro4.html">Abrir Página 4</a>')
+          .replace('<a href="contactos.html">Abrir PáginaContactos</a>', '<a href="/contactos.html">Contactos</a>');
       }
       res.end(data);
     }
