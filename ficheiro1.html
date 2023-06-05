@@ -80,7 +80,6 @@
 
   </div>
   <h1>Bem-vindo ao meu servidor</h1>
-  <h2>Nova atulização</h2>
   <div id="content1"></div>
   <div id="content2"></div>
   <div id="content4"></div>
@@ -95,7 +94,7 @@
   <script>
     axios.all([
       axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/OutrosFicheiros/testebloco.txt'),
-      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/FicheirosHTMLWEB/ficheiroteste2.html')
+      axios.get('https://raw.githubusercontent.com/TiagoRochaMartins/server2test/main/ficheiroteste2.html')
 
     ])
       .then(axios.spread((response1, response2) => {
