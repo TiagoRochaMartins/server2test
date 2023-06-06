@@ -99,10 +99,3 @@ server.listen(8000, () => {
   console.log('Servidor em execução na porta 8000');
   
 });
-
-
-
-
-
-
-
